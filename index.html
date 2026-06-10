@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Summary</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <article class="card" role="main">
+
+    <!-- Hero -->
+    <div class="hero" aria-hidden="true">
+      <!-- Music notes -->
+      <span class="note">♪</span>
+      <span class="note">♫</span>
+      <span class="note">♪</span>
+      <span class="note">♩</span>
+      <span class="note">♫</span>
+
+      <!-- Decorative dots -->
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+
+      <!-- City skyline -->
+      <div class="skyline">
+        <div class="building" style="width:18px;height:55px"></div>
+        <div class="building" style="width:14px;height:38px"></div>
+        <div class="building" style="width:22px;height:70px"></div>
+        <div class="building" style="width:16px;height:45px"></div>
+        <div class="building" style="width:28px;height:80px"></div>
+        <div class="building" style="width:12px;height:34px"></div>
+        <div class="building" style="width:20px;height:60px"></div>
+        <div class="building" style="width:15px;height:42px"></div>
+        <div class="building" style="width:26px;height:72px"></div>
+        <div class="building" style="width:18px;height:50px"></div>
+        <div class="building" style="width:10px;height:30px"></div>
+        <div class="building" style="width:22px;height:65px"></div>
+        <div class="building" style="width:16px;height:44px"></div>
+        <div class="building" style="width:24px;height:78px"></div>
+        <div class="building" style="width:14px;height:36px"></div>
+        <div class="building" style="width:20px;height:56px"></div>
+      </div>
+
+      <!-- Dancer SVG -->
+      <div class="dancer-wrap">
+        <svg viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Head -->
+          <circle cx="75" cy="36" r="22" fill="#f5c5a3"/>
+          <!-- Hair -->
+          <ellipse cx="75" cy="20" rx="23" ry="12" fill="#1e1a5e"/>
+          <!-- Headphones band -->
+          <path d="M52 30 Q75 10 98 30" stroke="#1a1a2e" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Headphone left -->
+          <rect x="47" y="28" width="11" height="16" rx="5" fill="#1a1a2e"/>
+          <!-- Headphone right -->
+          <rect x="83" y="28" width="11" height="16" rx="5" fill="#1a1a2e"/>
+          <!-- Body / torso (teal shirt) -->
+          <path d="M50 58 Q45 80 42 110 L108 110 Q105 80 100 58 Q88 52 75 52 Q62 52 50 58Z" fill="#2dd4bf"/>
+          <!-- Left arm raised -->
+          <path d="M50 65 Q30 48 28 28" stroke="#1a1a2e" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <path d="M50 65 Q30 48 28 28" stroke="#f5c5a3" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <!-- Right arm with phone -->
+          <path d="M100 65 Q118 75 120 95" stroke="#1a1a2e" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <path d="M100 65 Q118 75 120 95" stroke="#f5c5a3" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <!-- Phone -->
+          <rect x="113" y="93" width="16" height="26" rx="3" fill="#fff" stroke="#1a1a2e" stroke-width="2"/>
+          <rect x="116" y="97" width="10" height="16" rx="1" fill="#dde0f8"/>
+          <!-- Pants / legs -->
+          <path d="M42 110 Q40 145 44 175 L64 175 Q68 145 75 130 Q82 145 86 175 L106 175 Q110 145 108 110Z" fill="#1e1a5e"/>
+          <!-- Shoes -->
+          <ellipse cx="54" cy="176" rx="12" ry="6" fill="#1a1a2e"/>
+          <ellipse cx="96" cy="176" rx="12" ry="6" fill="#1a1a2e"/>
+          <!-- Cable from headphones -->
+          <path d="M58 44 Q60 90 100 65" stroke="#1a1a2e" stroke-width="2.5" fill="none" stroke-dasharray="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+      <h1>Music Summary</h1>
+      <p class="subtitle">
+        You can now listen to millions of songs,<br>
+        through GREATBOX and podcasts on any device<br>
+        all over the world!
+      </p>
+
+      <!-- Plan -->
+      <div class="plan-card" role="region" aria-label="Selected plan">
+        <div class="plan-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18V5l12-2v13M9 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/>
+          </svg>
+        </div>
+        <div class="plan-info">
+          <strong>Monthly Plan</strong>
+          <span>$50.99/monthly</span>
+        </div>
+        <button class="change-btn" onclick="handleChange()" aria-label="Change plan">Change</button>
+      </div>
+
+      <!-- CTA -->
+      <button class="proceed-btn" onclick="handleProceed(event)" aria-label="Proceed to payment">
+        Make your Payment
+      </button>
+
+      <br>
+      <button class="cancel-btn" onclick="handleCancel()" aria-label="Cancel order">
+        Declined Order
+      </button>
+    </div>
+
+  </article>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+
+  </script>
+</body>
+</html>
